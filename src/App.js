@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-
+import s from "./GlobalStyles.module.css"
+import AddUser from "./components/addUser/AddUser";
+import Users from "./components/users/Users";
+import SelectOrders from "./components/selectOrders/SelectOrders";
+import {useSelector} from "react-redux";
 function App() {
+  const popup = useSelector((state) => {
+    return state.popupStatus
+  })
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={s.wrapper}>
+      <AddUser />
+        <Users />
+      { popup.status ? <SelectOrders/> : ""}
     </div>
   );
 }

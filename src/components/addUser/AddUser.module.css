@@ -1,0 +1,37 @@
+.addUserWrapper{
+    display: flex;
+    justify-content: center;
+}
+.addUserBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 300px;
+    border:1px solid #ccc;
+    background-color: white;
+    box-shadow: 2px 4px 5px #ccc;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+.userName{
+    outline: none;
+    padding: 10px;
+    border:none;
+    border-radius: 10px;
+    width: 70%;
+    margin: 25px auto;
+    box-shadow: 3px 2px 3px #ccc;
+}
+.addButton{
+    padding: 15px;
+    background-color: #577a28;
+    border:none;
+    cursor: pointer;
+    transition: all 0.2s linear;
+    border-radius: 5px;
+    color:#fff;
+}
+.addButton:hover{
+    background-color: #2c852c;
+}

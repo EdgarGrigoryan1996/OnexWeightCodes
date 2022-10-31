@@ -1,0 +1,101 @@
+.userWrapper{
+    display:flex;
+    flex-wrap: wrap;
+    margin-top: 25px;
+}
+.userBlock{
+    border:1px solid #ccc;
+    padding: 5px 25px 25px 25px;
+    border-radius: 10px;
+    min-height: 250px;
+    min-width: 300px;
+    margin: 15px;
+    box-shadow: 2px 2px 3px #ccc;
+    position: relative;
+}
+.deleteUser{
+    position: absolute;
+    top:5px;
+    right: 10px;
+    color:#ac3232;
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.userName{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+}
+.trackLine{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px;
+    cursor: pointer;
+}
+.trackLine span{
+    display: inline-block;
+    background-color: #b1e36e;
+    padding: 3px;
+    margin-right: 2px;
+    border-radius: 4px;
+}
+.trackLine button{
+    display: inline-block;
+    background-color: #ac3232;
+    border-radius: 3px;
+    color:#fff;
+    border:none;
+    cursor: pointer;
+    padding: 3px 8px;
+    margin: 2px;
+    transition: all 0.2s ease;
+}
+.trackLine button:hover{
+    background-color: #791f1f;
+}
+.totalCost span{
+    font-weight: 800;
+    color: #ac3232;
+    padding-bottom: 50px;
+}
+.totalCost{
+    padding-bottom: 50px;
+}
+
+
+.addButton{
+    position: absolute;
+    background-color: #577a28;
+    border:none;
+    padding: 10px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    color:#fff;
+    font-weight: 700;
+    transition: all 0.2s ease;
+    bottom:3px;
+    left:50%;
+    transform: translate(-50%, -50%);
+}
+.addButton:hover{
+    background-color: #2c852c;
+}
+.noUsers{
+    width: 100%;
+    font-size: 100px;
+    color: #a9a9a9;
+    font-family: "Bell MT";
+    text-shadow: 2px 1px #ccc;
+}
+.noUsers img{
+    width: 200px;
+    margin: 0 auto;
+}
+.userAvialable{
+    color:#2c852c;
+}
+.userNotAvialable{
+    color:#791f1f;
+}
