@@ -13,12 +13,13 @@
 .selectOrdersBlock{
     position: relative;
     background-color: white;
-    width: 350px;
+    min-width: 400px;
     height: 700px;
     border:1px solid #ccc;
     border-radius: 8px;
-    padding: 15px 15px 0 15px;
+    padding: 15px 0 0 15px;
 }
+
 .selectOrdersBlock h2 {
     text-align: center;
 }
@@ -52,7 +53,7 @@
     transition: all 0.2s ease;
 }
 .buttons button:nth-child(2):hover{
-    background-color: #2c852c;
+    background-color: #2C852CFF;
 }
 .buttons button:nth-child(1){
     background-color: #ac3232;
@@ -68,13 +69,28 @@
     background-color: #791f1f;
 }
 .orders{
-    height: 550px;
+    height: 520px;
     overflow-y: scroll;
+    overflow-X: hidden;
+}
+.orders::-webkit-scrollbar {
+    width: 5px;
+}
+
+.orders::-webkit-scrollbar-track {
+    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;
+    background-color: #f9f9fd;
+    border-radius: 10px;
+}
+
+.orders::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: linear-gradient(180deg, #2C852CFF, #7FC77FFF);
 }
 .selectAll{
     display:flex;
     justify-content: flex-end;
-    padding: 5px;
+    padding: 5px 14px;
 }
 .selectAll label{
     padding-right: 10px;
@@ -82,4 +98,14 @@
 }
 .selectAll input{
     cursor: pointer;
+}
+.searchBlock{
+    text-align: center;
+}
+.search{
+    width: 80%;
+    border:none;
+    border-bottom: 1px solid #2c852c;
+    padding: 5px;
+    outline: none;
 }

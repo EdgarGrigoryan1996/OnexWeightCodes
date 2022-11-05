@@ -10,10 +10,11 @@ const SelectOrders = () => {
         return state.allOrders
     })
     const currentUser = useSelector((state) => {
-        return state.popupStatus.currentUser
+        return state.popupStatus.allOrdersPopup.currentUser
     })
 
     const [selectAllStatus,setSelectAllStatus] = useState(false)
+    const [searchTrack,setSearchTrack] = useState("")
 
      function hidePopup(){
         dispatch({
@@ -39,15 +40,31 @@ const SelectOrders = () => {
                 <div className={s.selectOrdersBlock}>
                     <span className={s.close} onClick={hidePopup}>x</span>
                     <h2>Select Orders</h2>
+                    <div className={s.selectAll}>
+                        <label htmlFor="selectAll">{!selectAllStatus ? "Select " : "Unselect "} all</label>
+                        <input id="selectAll" type="checkbox" checked={selectAllStatus} onChange={selectAll}/>
+                    </div>
+                    <div className={s.searchBlock}>
+                        <input
+                            type="text"
+                            placeholder={"Search"}
+                            className={s.search}
+                            value={searchTrack}
+                            onChange={(e)=>{
+                                setSearchTrack(e.target.value)
+                            }}
+                        />
+                    </div>
                     <div className={s.orders}>
-                        <div className={s.selectAll}>
-                            <label htmlFor="selectAll">Select all unknown orders</label>
-                            <input id="selectAll" type="checkbox" checked={selectAllStatus} onChange={selectAll}/>
-                        </div>
+
                         {orders.map((order) => {
                             return (
                                 <div className={order}>
-                                    <Order key={order.id} order={order}/>
+                                    <Order
+                                        key={order.id}
+                                        order={order}
+                                        searchTrack = {searchTrack}
+                                    />
                                 </div>
                             )
                         })}

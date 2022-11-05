@@ -1,6 +1,6 @@
 import s from "./Users.module.css";
 import Order from "./Order";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 export default function User({user}){
 
@@ -22,30 +22,22 @@ export default function User({user}){
             }
         })
     }
-    function deleteUser(userId){
-        dispatch({
-            type:"DELETE_USER",
-            payload:{
-                userId
-            }
-        })
-    }
-    function deleteOrdersFromUser(userId){
-        dispatch({
-            type:"DELETE_ORDERS_FROM_USER",
-            payload:{
-                userId
-            }
-        })
-    }
+
     return (
         <div className={s.userBlock}>
+
             <span className={s.deleteUser} onClick={() => {
-                deleteUser(user.id)
-                deleteOrdersFromUser(user.id)
+                dispatch({
+                    type:"SHOW_DELETE_POPUP",
+                    payload:{
+                        currentUser:user
+                    }
+                })
+                // deleteUser(user.id)
+                // deleteOrdersFromUser(user.id)
             }}>x</span>
             <div className={s.userName}>{user.name}</div>
-            <div>
+            <div className={s.orders}>
                 {user.orders.map((order) => {
                     return (
                         <Order key={order.id} user={user} order={order} func={deleteTrack} type="userOrders"/>
